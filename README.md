@@ -21,3 +21,8 @@ Library Helper was made with the idea that users can sign up with their library 
 * Java Spring
 * MySQL
 * D3
+
+1. [ ] A numbered list
+              1. A nested numbered list
+              2. Which is numbered
+          2. Which is numbered
