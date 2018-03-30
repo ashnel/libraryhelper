@@ -8,9 +8,15 @@ Library Helper was made with the idea that users can sign up with their library 
   * Check items back in
   * Look up card holders and their details (items checked out, their activity, etc)
   * Suspend card holder accounts/revoke access
-2. 
+2. Add order options when view the available items in the library
+3. Allow users to sign up for a library card
+4. Allow registration only if the ID a user is trying to sign up with is in the database
+5. Implement RFID like system
+ * Allow users to check out items by scanning their barcodes
+ * Allow admins to scan back in items by scanning teir barcodes
+ * Store item data in database with their barcode information
 
-## Created With
+## Built With
 
 * Java Spring
 * MySQL
