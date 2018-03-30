@@ -5,7 +5,7 @@ Library Helper was made with the idea that users can sign up with their library 
 ## Things to add and fix
 
 - [ ] Allow the setup of admin accounts
-  1.- [ ]Check items back in
+  1. Check items back in
   2. Look up card holders and their details (items checked out, their activity, etc)
   3. Suspend card holder accounts/revoke access
 - [ ] Add order options when view the available items in the library
