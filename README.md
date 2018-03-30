@@ -12,8 +12,8 @@ Library Helper was made with the idea that users can sign up with their library 
 - [ ] Allow users to sign up for a library card
 - [ ] Allow registration only if the ID a user is trying to sign up with is in the database
 - [ ] Implement RFID like system
-  1. Allow users to check out items by scanning their barcodes
-  2. Allow admins to scan back in items by scanning teir barcodes
+  1. Allow users to check out items by scanning their barcodes using phone or laptop camera
+  2. Allow admins to scan back in items by scanning their barcodes
   3. Store item data in database with their barcode information
 
 ## Built With
