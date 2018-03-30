@@ -4,14 +4,14 @@ Library Helper was made with the idea that users can sign up with their library 
 
 ## Things to add and fix
 
-1. [ ] Allow the setup of admin accounts
+[ ] Allow the setup of admin accounts
   1. Check items back in
   2. Look up card holders and their details (items checked out, their activity, etc)
   3. Suspend card holder accounts/revoke access
-2. Add order options when view the available items in the library
-3. Allow users to sign up for a library card
-4. Allow registration only if the ID a user is trying to sign up with is in the database
-5. Implement RFID like system
+[ ] Add order options when view the available items in the library
+[ ] Allow users to sign up for a library card
+[ ] Allow registration only if the ID a user is trying to sign up with is in the database
+[ ] Implement RFID like system
  1. Allow users to check out items by scanning their barcodes
  2. Allow admins to scan back in items by scanning teir barcodes
  3. Store item data in database with their barcode information
@@ -22,7 +22,3 @@ Library Helper was made with the idea that users can sign up with their library 
 * MySQL
 * D3
 
-1. [ ] A numbered list
-              1. A nested numbered list
-              2. Which is numbered
-          2. Which is numbered
