@@ -5,3 +5,6 @@ Library Helper was made with the idea that users can sign up with their library 
 ## Created With
 
 * Java
+* Spring
+* SQL
+* D3
