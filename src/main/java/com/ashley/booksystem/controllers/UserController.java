@@ -23,12 +23,11 @@ import com.ashley.booksystem.models.Book;
 import com.ashley.booksystem.models.BookInCheckOutHistory;
 import com.ashley.booksystem.models.CheckedOutBook;
 import com.ashley.booksystem.models.User;
-import com.ashley.booksystem.repositories.PrevBookRepo;
 import com.ashley.booksystem.services.BookService;
 import com.ashley.booksystem.services.CheckedBookService;
 import com.ashley.booksystem.services.PrevBookService;
 import com.ashley.booksystem.services.UserService;
-
+import com.ashley.booksystem.validator.UserValidator;
 
 @Controller
 public class UserController {
@@ -36,16 +35,18 @@ public class UserController {
 	private BookService bookService;
 	private CheckedBookService checkedBookService;
 	private PrevBookService prevBookService;
+	private UserValidator userValidator;
     
-    public UserController (UserService userService, BookService bookService, CheckedBookService checkedBookService, PrevBookService prevBookService) {
+    public UserController (UserService userService, BookService bookService, CheckedBookService checkedBookService, PrevBookService prevBookService, UserValidator userValidator) {
         this.userService = userService;
         this.bookService = bookService;
         this.checkedBookService = checkedBookService;
         this.prevBookService = prevBookService;
+        this.userValidator = userValidator;
     }
     
 	@RequestMapping("/login")
-    public String loginOrRegister (@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model, @Valid @ModelAttribute("user") User user) {
+    public String loginOrRegister (@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model, @ModelAttribute("user") User user) {
 		if(error != null) {
             model.addAttribute("errorMessage", "Invalid Credentials, Please try again.");
         }
@@ -117,6 +118,13 @@ public class UserController {
 		
 		return "accountOverview.jsp";
 	}
+	
+	@RequestMapping("/admin")
+    public String adminPage(Principal principal, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByUsername(username));
+        return "adminPage.jsp";
+    }
 	
 	@RequestMapping(value = {"/", "/dashboard"})
     public String home(@Valid @ModelAttribute("checkedoutbook") CheckedOutBook checkedoutbook, @Valid @ModelAttribute("bookincheckouthistory") BookInCheckOutHistory bookincheckouthistory, BindingResult result, Model model, Principal principal) {
