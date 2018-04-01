@@ -14,6 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -21,11 +24,17 @@ public class User {
 	@Id
     @GeneratedValue
     private Long id;
+	@NotBlank
     private String firstName;
+	@NotBlank
     private String lastName;
+    @NotBlank
+    @Pattern(regexp=".+@.+\\..+")
+//    @Email
     private String username; // Email address to be used as username 
-    private String homeAddress;
+    @NotBlank
     private String libraryId;
+    @Size(min=8)
     private String password;
     @Transient
     private String passwordConfirmation;
@@ -76,15 +85,7 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	public String getHomeAddress() {
-		return homeAddress;
-	}
-
-	public void setHomeAddress(String homeAddress) {
-		this.homeAddress = homeAddress;
-	}
-
+	
 	public String getLibraryId() {
 		return libraryId;
 	}

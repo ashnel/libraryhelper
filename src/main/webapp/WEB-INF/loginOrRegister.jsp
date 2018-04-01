@@ -13,6 +13,9 @@
         <c:out value="${logoutMessage}"></c:out>
     </c:if>
 	<h1>Login</h1>
+	<c:if test="${errorMessage != null}">
+        <c:out value="${errorMessage}"></c:out>
+    </c:if>
     <form method="POST" action="/login">
         <p>
             <label for="username">Username</label>
@@ -38,10 +41,6 @@
         <p>
             <form:label path="lastName">Last Name:</form:label>
             <form:input path="lastName"/>
-        </p>
-        <p>
-            <form:label path="homeAddress">Home Address:</form:label>
-            <form:input path="homeAddress"/>
         </p>
         <p>
             <form:label path="libraryId">Library ID Number:</form:label>
